@@ -1,0 +1,160 @@
+﻿@*@model IEnumerable<testlogin.EFModels.log_gamelogin>*@
+@using PagedList.Mvc;
+@model PagedList.IPagedList<testlogin.Models.LogAllModel>
+@{
+    ViewBag.Title = "LogAll";
+    Layout = "~/Views/SuperAdmin/_LayoutHTML5Page.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">登陆日志</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<div class="row">
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <form action="/SuperAdmin/LogAll" method="post">
+                    <p> 开始时间<input id="d5221" name="start" value="@ViewBag.start" class="Wdate" type="text" onclick="var d5222=$dp.$('d5222');WdatePicker({onpicked:function(){d5222.click();},maxDate:'#F{$dp.$D(\'d5222\')}'})"/></p>
+                    结束时间<input id="d5222" name="end" class="Wdate" value="@ViewBag.end" type="text" onclick="WdatePicker({minDate:'#F{$dp.$D(\'d5221\')}'})"/> <input type="submit" value="查询" />
+                </form>
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                
+                <div class="table-responsive">
+
+
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr>
+
+                                <th>玩家ID</th>
+                                <th>玩家昵称</th>
+                                <th>登陆时间</th>
+                                <th>设备</th>
+                                <th>IP</th>
+                                <th>code</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item1 in Model)
+                            {
+                                <tr>
+
+                                    <td>@item1.userid</td>
+                                    <td>@item1.username</td>
+                                    <td>@item1.logtime</td>
+                                    <td>@item1.serverid</td>
+                                    <td>@item1.ip</td>
+                                    <td>@item1.code</td>
+                                </tr>
+
+                            }
+
+                            <tr>
+                                <td colspan="5">
+                                    共 @Model.PageCount 页，当前第 @Model.PageNumber 页
+                                    @{
+                                        string startt = ViewBag.start;
+                                        string endt = ViewBag.end;
+                                        @Html.PagedListPager(Model, page => Url.Action("LogAll", "SuperAdmin", new { page, starttime = startt, endtime = endt }), new PagedListRenderOptions() { LinkToFirstPageFormat = "首页", LinkToNextPageFormat = "下一页", LinkToPreviousPageFormat = "上一页", LinkToLastPageFormat = "末页", DisplayItemSliceAndTotal = false, MaximumPageNumbersToDisplay = 2 })
+                                    }
+                                    
+                                </td>
+                            </tr>
+
+
+
+
+                        </tbody>
+
+
+
+                    </table>
+                </div>
+                <!-- /.table-responsive -->
+            </div>
+            <!-- /.panel-body -->
+        </div>
+    </div>
+    <!-- /.col-lg-6 -->
+    <!-- /.col-lg-6 -->
+</div>
+
+@*<div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                        <thead>
+                            <tr>
+                                <th>登陆ID</th>
+                                <th>游戏ID</th>
+                                <th>设备</th>
+                                <th>IP</th>
+                                <th>时间</th>
+                                <th>code</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item1 in Model)
+                            {
+
+                                <tr class="gradeA">
+                                    <td>@item1.logid</td>
+                                    <td>@item1.kindid</td>
+                                    <td>@item1.serverid</td>
+                                    <td class="center">@item1.clientip</td>
+                                    <td class="center">@item1.logtime</td>
+                                    <td class="center">@item1.code</td>
+
+                                </tr>
+
+                            }
+                        </tbody>
+                    </table>
+                    <!-- /.table-responsive -->
+
+                </div>
+            </div>
+        </div>
+    </div>*@
+@*<h2>LogAll</h2>
+    <table>
+        <tr>
+            <th>登陆ID</th>
+            <th>游戏ID</th>
+            <th>设备</th>
+            <th>IP</th>
+            <th>时间</th>
+            <th>code</th>
+        </tr>
+
+        @foreach (var item1 in Model)
+        {
+            <tr>
+                <td>@item1.logid</td>
+                <td>@item1.kindid</td>
+                <td>@item1.serverid</td>
+                <td>@item1.clientip</td>
+                <td>@item1.logtime</td>
+                <td>@item1.code</td>
+            </tr>
+
+        }
+        <tr>
+            <th></th>
+            <th> 共 @Model.PageCount 页，当前第 @Model.PageNumber 页</th>
+            <th>@Html.PagedListPager(Model, page => Url.Action("LogAll", "SuperAdmin", new { page }))</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </table>*@

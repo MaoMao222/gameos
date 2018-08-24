@@ -1,0 +1,249 @@
+body {
+  font-size: 12px ;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif,"Microsoft YaHei";
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.btn {
+  border: 1px solid #ddd;
+  padding: 4px 10px;
+  font-size: 12px;
+  height: 32px;
+  line-height: 14px;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.btn-icon {
+  padding: 8px;
+  cursor: pointer;
+  background-image: none;
+  background-color: #fff;
+}
+
+.gap {
+  color: #09c;
+  margin: 5px;
+}
+
+.clearfix {
+  clear: both;
+  overflow: hidden;
+}
+
+input[type=checkbox] {
+  vertical-align: middle;
+  margin-top: -3px;
+}
+
+label {
+  font-weight: normal;
+}
+.menu-select{
+  cursor: pointer;
+}
+.dropdown-btn{
+  padding: 22px 10px;
+}
+.btn-group.open .dropdown-toggle{
+  -webkit-box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0);
+  box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0);
+}
+/*header*/
+.header {
+  width: 100%;
+  background-color: #0099cc;
+  height: 50px;
+  color: #fff;
+  line-height: 50px;
+}
+.yp-logo{
+  height: 50px;
+  margin-left: 5px;
+  overflow: hidden;
+  line-height: 50px;
+}
+.yp-logo h1{
+  font-size: 18px;
+  font-family: "幼圆",sans-serif;
+}
+.title{
+  font-weight: bold;
+}
+.yp-img{
+  width: 56px;
+  height: 50px;
+  overflow: hidden;
+}
+.yp-logo img{
+  width: 56px;
+  height: 50px;
+}
+.topbar-info-item{
+  display: inline-block;
+  margin-left: 1px;
+}
+.topbar-btn {
+  padding: 0 10px;
+  height: 50px;
+  display: block;
+  z-index: 2;
+  background: #09c;
+  color: #fff;
+  font-size: 14px;
+  line-height: 50px;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  border: none;
+}
+.header .open .topbar-btn{
+  color: #333;
+  background: #fff;
+  border-bottom: 1px solid #eaedf1;
+  position: relative;
+}
+.dropdown-menu{
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  border: none;
+}
+.header a{
+  text-decoration: none;
+  color: #fff;
+}
+.header .dropdown.open .topbar-btn .icon-arrow-down{
+  vertical-align: text-top;
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+}
+.header .icon-arrow-down {
+  display: inline-block;
+  width: 18px;
+  text-align: center;
+  vertical-align: middle;
+  transition: transform 0.2s, vertical-align 0.2s;
+  -o-transition: transform 0.2s, vertical-align 0.2s;
+  -ms-transition: transform 0.2s, vertical-align 0.2s;
+  -moz-transition: transform 0.2s, vertical-align 0.2s;
+  -webkit-transition: transform 0.2s, vertical-align 0.2s;
+}
+.topbar-btn:hover,.header .open .topbar-btn:hover {
+  text-decoration: none;
+}
+.topbar-btn:hover{
+  background-color: #008fbf;
+  color: #fff;
+}
+.topbar-info-btn {
+  height: 40px;
+  font-size: 12px;
+}
+
+.iframe{
+  width: 100%;
+  min-height: 924px;
+  overflow: hidden;
+  float: left;
+  height: calc(100% - 140px);
+}
+#j-iframe{
+  min-height: 924px;
+}
+/*wrapper*/
+.wrapper {
+  width: 100%;
+  min-height: 924px;
+  overflow: hidden;
+}
+
+/*左侧*/
+.slide {
+  position: absolute;
+  width: 180px;
+  min-height: 924px;
+  background-color: #293038;
+  color: #fff;
+  z-index: 1;
+}
+
+.viewer-slidebar{
+  height: 30px;
+  width: 180px;
+  background: #394555;
+  color: #aeb9c2;
+  text-align: center;
+  line-height: 30px !important;
+  font-size: 12px;
+  user-select: none;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+.slide ul {
+  background-color: #22282e;
+  min-height: 100%;
+  list-style: none;
+  overflow: hidden;
+}
+
+.slide ul li {
+  position: relative;
+  background-color: #22282e;
+  padding: 0 0 0 14px;
+  height: 40px;
+  line-height: 40px;
+  list-style: none;
+  border: 1px solid #22282e;
+  cursor: pointer;
+ /* margin-left: 5px;*/
+
+}
+.slide ul li:hover{
+  background-color: #394555;
+}
+/*.slide ul li:nth-child(1), .slide ul li.click {
+  background-color: #09c;
+  border: 1px solid #09c;
+}*/
+.slide ul li a {
+  color: #fff;
+/*  width: 180px;
+  text-align: left;*/
+  text-decoration: none;
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+}
+
+.slide ul li a span {
+  margin-left: 5px;
+}
+
+.sidebar-hide {
+  display: none;
+}
+
+.viewer-slidebar-min, .slide-min{
+  width: 60px;
+}
+.slide ul li a.click{
+  background-color: #09c;
+}
+.nav-icon{
+  font-size: 16px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+/*/左侧*/
+
+/*/wrapper*/

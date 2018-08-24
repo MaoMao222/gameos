@@ -1,0 +1,197 @@
+﻿@using testlogin.EFModels;
+@{
+    ViewBag.Title = "个人信息";
+    Layout = "~/Views/SuperAdmin/_LayoutHTML5Page.cshtml";
+    var admin = ViewData["admin"] as web_admin;
+    var user = ViewData["user"] as game_user_account;
+    var login = ViewData["gamelogin"] as log_gamelogin;
+    var f_admin = ViewData["f_admin"] as web_admin;
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">个人信息</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+@{
+    string levelname;
+    string p_invitecode;
+    string p_name;
+    switch (admin.level)
+    {
+        case 9:
+            levelname = "系统管理员";
+            p_invitecode = "无";
+            p_name = "无";
+            break;
+        case 1:
+            levelname = "一级代理";
+            p_invitecode = f_admin.invitecode.ToString();
+            p_name = f_admin.username;
+            break;
+        case 2:
+            levelname = "二级代理";
+            p_invitecode = f_admin.invitecode.ToString();
+            p_name = f_admin.username;
+            break;
+        default:
+            levelname = "三级代理";
+            p_invitecode = f_admin.invitecode.ToString();
+            p_name = f_admin.username;
+            break;
+    }
+}
+
+<div class="row">
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                账号信息
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div class="table-responsive">
+
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>账号</th>
+                                <th>等级</th>
+                                <th>姓名</th>
+                                <th>手机号</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>@admin.username</td>
+                                <td>@levelname</td>
+                                <td>@admin.real_name</td>
+                                <td>@admin.phone</td>
+                            </tr>
+                        </tbody>
+
+                        <thead>
+                            <tr>
+                                <th>游戏id</th>
+                                <th>游戏昵称</th>
+                                <th>注册时间</th>
+                                <th>最近登录时间</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>@admin.userid</td>
+                                <td>@user.nick_name</td>
+                                <td>@user.RegisterDate</td>
+                                @{if (login == null)
+                                    {
+                                        <td>暂无时间</td>
+                                    }
+                                    else
+                                    {
+                                        <td>@login.logtime</td>
+                                    }
+                                }
+                            </tr>
+                        </tbody>
+
+                        <thead>
+                            <tr>
+                                <th>邀请码</th>
+                                <th>上级代理邀请码</th>
+                                <th>上级代理名称</th>
+                                <th>登录ip</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+
+                                <td>@admin.invitecode</td>
+                                <td>@p_invitecode</td>
+                                <td>@p_name</td>
+                                @{if (login == null)
+                                    {
+                                        <td>暂无IP</td>
+                                    }
+                                    else
+                                    {
+                                        <td>@login.clientip</td>
+                                    }
+                                }
+
+
+                            </tr>
+                        </tbody>
+
+                        <thead>
+                            <tr>
+                                <th>微信号</th>
+                                <th>会员数</th>
+                                <th>金币</th>
+                                <th>钻石</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>@admin.wechat</td>
+                                <td>@ViewBag.erzi</td>
+                                <td>@user.Gold</td>
+                                <td>@user.Ingot</td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+
+
+
+                </div>
+                <!-- /.table-responsive -->
+            </div>
+            <!-- /.panel-body -->
+        </div>
+
+        <!-- /.panel -->
+    </div>
+    <!-- /.col-lg-6 -->
+    <!-- /.col-lg-6 -->
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                金额信息
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>可用金额:</th>
+                                <th>@admin.balance</th>
+                                <th>累计收益:</th>
+                                <th>@admin.accumulated_income</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>转账金额:</td>
+                                <td colspan="3">
+                                    <form role="form">
+                                        <input type="text" value="0"  />
+                                        <button type="button"  onclick="window.location.href='@Url.Action("Index", "WeiXin")'" >微信取款</button>
+                                    </form>
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

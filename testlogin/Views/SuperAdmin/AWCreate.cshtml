@@ -1,0 +1,41 @@
+﻿@model testlogin.EFModels.game_config_award
+@{
+    ViewBag.Title = "AWCreate";
+    Layout = "~/Views/SuperAdmin/_LayoutHTML5Page.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">AWCreate</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    @Html.ValidationSummary(true)
+    <div>
+        <label>奖励描述</label>
+        @Html.EditorFor(model => model.award_des)
+        @Html.ValidationMessageFor(model => model.award_des)
+    </div>
+        <div>
+            <label>钻石</label>
+            @Html.EditorFor(model => model.ingot)
+            @Html.ValidationMessageFor(model => model.ingot)
+        </div>
+        <div>
+            <label>金币</label>
+            @Html.EditorFor(model => model.gold)
+            @Html.ValidationMessageFor(model => model.gold)
+        </div>
+        <div><input type="submit" value="保存" /></div>
+
+}
+<div>
+    @Html.ActionLink("返回", "Award")
+
+</div>

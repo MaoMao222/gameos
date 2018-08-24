@@ -1,0 +1,35 @@
+﻿@model testlogin.EFModels.game_config_email
+@{
+    ViewBag.Title = "滚动条";
+    Layout = "~/Views/SuperAdmin/_LayoutHTML5Page.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">滚动条修改</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.title)
+    @Html.HiddenFor(model => model.id)
+    @Html.HiddenFor(model => model.type)
+    <div class="form-group">
+        <label>标题</label>
+        <input class="form-control" id="disabledInput" type="text" name="title" placeholder="@Model.title" disabled>
+        @Html.ValidationMessageFor(model => model.title)
+    </div>
+    
+
+    <div class="form-group">
+        <label>内容</label>
+        <textarea class="form-control" rows="3" name="detail" id="detail">@Model.detail</textarea>
+
+        @Html.ValidationMessageFor(model => model.detail)
+    </div>
+    <div class="form-group"><input type="submit" value="修改" /></div>
+}

@@ -1,0 +1,91 @@
+﻿@using testlogin.EFModels;
+@{
+    ViewBag.Title = "代理信息修改";
+    Layout = "~/Views/SuperAdmin/_LayoutHTML5Page.cshtml";
+    var admin = ViewData["e_admin"] as web_admin;
+    var user = ViewData["e_user"] as game_user_account;
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">代理信息修改</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <input type="hidden" name="UserID" value="@user.UserID" />
+    <input type="hidden" name="id" value="@admin.id" />
+    <div class="form-group">
+        <label>账号</label>
+        <input class="form-control" name="username" value="@admin.username">
+        @*<input class="form-control" id="disabledInput" type="text" placeholder="@admin.username" disabled>*@
+    </div>
+    <div class="form-group">
+        <label>真实姓名</label>
+        <input class="form-control" name="real_name" value="@admin.real_name">
+    </div>
+    <div class="form-group">
+        <label>手机号</label>
+        <input class="form-control" name="phone" value="@admin.phone">
+    </div>
+    <div class="form-group">
+        <label>上级代理邀请码</label>
+        <input class="form-control" name="bind_number" value="@user.bind_number">
+        @*<input class="form-control" id="disabledInput" type="text" placeholder="@user.bind_number" disabled>*@
+
+    </div>
+    <div class="form-group">
+        <label>钻石数</label>
+        <input class="form-control" id="disabledInput" type="text" placeholder="@user.Ingot" disabled>
+        @*<input class="form-control" name="Ingot" value="@user.Ingot">*@
+    </div>
+    <div class="form-group">
+        <label>微信号</label>
+        <input class="form-control" name="wechat" value="@admin.wechat">
+        @*<input class="form-control" id="disabledInput" type="text" placeholder="@user.bind_number" disabled>*@
+
+    </div>
+    <div class="form-group">
+        <label>地区</label>
+        <input class="form-control" name="area" value="@admin.area">
+        @*<input class="form-control" id="disabledInput" type="text" placeholder="@user.bind_number" disabled>*@
+
+    </div>
+    <div class="form-group">
+        <label>代理等级</label>
+        <select class="form-control" name="level">
+            @{
+                switch (admin.level)
+                {
+                    case 1:
+                        <option value="1" selected>一级代理</option>
+                        <option value="2">二级代理</option>
+                        <option value="3">三级代理</option>
+                        break;
+                    case 2:
+                        <option value="1">一级代理</option>
+                        <option value="2" selected>二级代理</option>
+                        <option value="3">三级代理</option>
+                        break;
+                    default:
+                        <option value="1">一级代理</option>
+                        <option value="2">二级代理</option>
+                        <option value="3" selected>三级代理</option>
+                        break;
+                }
+            }
+
+        </select>
+    </div>
+    <p>
+        <button type="submit" class="btn btn-default">修改</button>
+        <button type="button" class="btn btn-default" onclick="window.location.href='@Url.Action("AgentSelect", "SuperAdmin",new {id = admin.id  })'">返回</button>
+    </p>
+
+}
+
+

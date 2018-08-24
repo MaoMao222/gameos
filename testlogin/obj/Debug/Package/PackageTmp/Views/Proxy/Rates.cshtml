@@ -1,0 +1,38 @@
+﻿@using testlogin.EFModels;
+@{
+    ViewBag.Title = "Rates";
+    Layout = "~/Views/SuperAdmin/_LayoutHTML5Page.cshtml";
+    var bili = ViewData["bl"] as t_rates;
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">代理比例分配</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<form action="@Url.Action("Rates","Proxy")" method="post" onsubmit="return check(this)">
+    @Html.AntiForgeryToken()
+
+    @Html.ValidationSummary(true)
+    <input type="hidden" name="id" value="1" />
+    <div>
+        一级代理：<input type="text" name="rate1" id="rate1" value="@bili.rate1" />
+    </div>
+    <div>
+        二级代理：<input type="text" name="rate2" id="rate2" value="@bili.rate2" />
+    </div>
+    <div>
+        三级代理：<input type="text" name="rate3" id="rate3" value="@bili.rate3" />
+    </div>
+    <div>
+        一级对二级抽成：<input type="text" name="rate1to2" id="rate1to2" value="@bili.rate1to2" />
+    </div>
+    <div>
+        一级对三级抽成：<input type="text" name="rate1to3" id="rate1to3" value="@bili.rate1to3" />
+    </div>
+    <div>
+        二级对三级抽成：<input type="text" name="rate2to3" id="rate2to3" value="@bili.rate2to3" />
+    </div>
+    <div><input type="submit" value="修改" /></div>
+</form>

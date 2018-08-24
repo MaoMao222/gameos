@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SuperLogin_dbModelStoreContainer" CdmEntityContainer="SuperLogin_dbEntities">
+    <EntitySetMapping Name="web_admin">
+      <EntityTypeMapping TypeName="SuperLogin_dbModel.web_admin">
+        <MappingFragment StoreEntitySet="web_admin">
+          <ScalarProperty Name="area" ColumnName="area" />
+          <ScalarProperty Name="wechat" ColumnName="wechat" />
+          <ScalarProperty Name="up_agentid" ColumnName="up_agentid" />
+          <ScalarProperty Name="balance" ColumnName="balance" />
+          <ScalarProperty Name="accumulated_income" ColumnName="accumulated_income" />
+          <ScalarProperty Name="real_name" ColumnName="real_name" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="invitecode" ColumnName="invitecode" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="level" ColumnName="level" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="parentid" ColumnName="parentid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_rates">
+      <EntityTypeMapping TypeName="SuperLogin_dbModel.t_rates">
+        <MappingFragment StoreEntitySet="t_rates">
+          <ScalarProperty Name="rate2to3" ColumnName="rate2to3" />
+          <ScalarProperty Name="rate1to3" ColumnName="rate1to3" />
+          <ScalarProperty Name="rate1to2" ColumnName="rate1to2" />
+          <ScalarProperty Name="rate3" ColumnName="rate3" />
+          <ScalarProperty Name="rate2" ColumnName="rate2" />
+          <ScalarProperty Name="rate1" ColumnName="rate1" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

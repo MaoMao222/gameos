@@ -1,0 +1,83 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    string level = ViewBag.level;
+    string levelname = "未赋值";
+    switch (level)
+    {
+        case "9":
+            levelname = "系统管理员";
+            break;
+        case "1":
+            levelname = "一级代理";
+            break;
+        case "2":
+            levelname = "二级代理";
+            break;
+        case "3":
+            levelname = "三级代理";
+            break;
+        default:
+            break;
+    }
+    Layout = "~/Views/SuperAdmin/_LayoutHTML5Page.cshtml";
+
+    }
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">欢迎 @levelname @ViewBag.uname 登陆成功！</h1>
+    </div>
+</div>
+<div class="row">
+    @{
+        if (level == "9")
+        {
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-comments fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">@ViewBag.dlcount</div>
+                                <div>会员人数</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="@Url.Action("AgentAll", "SuperAdmin",new { lv = level })">
+                        <div class="panel-footer">
+                            <span class="pull-left">查看代理</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        }
+    }
+    
+
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-green">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-tasks fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <div class="huge">@ViewBag.money</div>
+                        <div>累计收益</div>
+                    </div>
+                </div>
+            </div>
+            <a href="@Url.Action("personal", "Proxy")">
+                <div class="panel-footer">
+                    <span class="pull-left">查看详情</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

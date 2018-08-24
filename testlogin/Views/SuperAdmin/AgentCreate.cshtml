@@ -1,0 +1,152 @@
+﻿@model testlogin.EFModels.web_admin
+@{
+    ViewBag.Title = "AgentCreate";
+    Layout = "~/Views/SuperAdmin/_LayoutHTML5Page.cshtml";
+}
+
+
+<script type="text/javascript" language="javascript">
+    var xx = 0;
+    window.onload = function () {
+        var nameElement = document.getElementsByName("userid")[0];
+        nameElement.onblur = function () {
+
+            var tvalue = $("#userid").val();
+            $.ajax({
+                type: "POST",
+                url: "/SuperAdmin/validate",
+                data: "id=" + tvalue,
+                success: function (sesponseTest) {
+                    switch (sesponseTest.toString()) {
+                        case '1':
+                            $("#umsg").text("有效");
+                            xx = 1;
+                            break;
+                        case '0':
+                            $("#umsg").text("无效");
+                            break;
+                        case '2':
+                            $("#umsg").text("此用户已是代理");
+                            break;
+                        default:
+                            break;
+                    }
+                    //if (sesponseTest.toString() == '1') {
+                    //    $("#umsg").text("有效");
+                    //    xx = 1;
+                    //} else {
+                    //    $("#umsg").text("无效");
+                    //}
+
+                },
+                error: function () {
+                    if ($("#userid").val() == '') {
+                        $("#umsg").text("userid不能为空");
+                    } else {
+                        $("#umsg").text("请求失败!请重新提交!");
+                    }
+                }
+            });
+
+        }
+
+    }
+    function check(form) {
+        var nmsg = document.getElementById("nmsg");
+        var umsg = document.getElementById("umsg");
+        var pmsg = document.getElementById("pmsg");
+        if (form.username.value == '') {
+
+            nmsg.innerHTML = "<font color='red'>用户名不能为空</font>";
+
+            form.username.focus();
+            return false;
+        } else {
+            nmsg.innerHTML = "";
+        }
+        if (form.password.value == '') {
+            pmsg.innerHTML = "<font color='red'>用户名不能为空</font>";
+            form.password.focus();
+            return false;
+        } else {
+            pmsg.innerHTML = "";
+        }
+
+        if (form.userid.value == '') {
+
+            umsg.innerHTML = "<font color='red'>用户id不能为空</font>";
+            form.userid.focus();
+            return false;
+        } else {
+            umsg.innerHTML = "";
+        }
+        if (xx < 1) {
+            umsg.innerHTML = "<font color='red'>用户id错误</font>";
+            return false;
+        }
+
+        return true;
+    }
+</script>
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">添加代理</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+
+<form action="@Url.Action("AgentCreate","SuperAdmin")" method="post" onsubmit="return check(this)">
+    @*@using (Html.BeginForm())
+        {*@
+    @Html.AntiForgeryToken()
+
+    @Html.ValidationSummary(true)
+    <input type="hidden" name="parentid" value="@ViewBag.nowid" />
+    @*<label>当前操作人员id：@ViewBag.nowid</label>*@
+    <div>
+        <label>代理账号</label>
+        @Html.EditorFor(model => model.username)
+        <span id="nmsg"></span>
+        @*@Html.ValidationMessageFor(model => model.username)*@
+    </div>
+    <div>
+        <label>密码</label>
+        @Html.EditorFor(model => model.password)
+        <span id="pmsg"></span>
+        @*@Html.ValidationMessageFor(model => model.password)*@
+    </div>
+    <div>
+        <label>关联游戏id</label>
+        @Html.EditorFor(model => model.userid)
+        @Html.ValidationMessageFor(model => model.userid)
+        <span id="umsg"></span>
+    </div>
+    <div>
+        <label>代理等级</label>@Html.DropDownList("level", new SelectList(ViewBag.select, "Value", "Text"))
+    </div>
+    <div>
+        <label>真实姓名</label>
+        @Html.EditorFor(model => model.real_name)
+    </div>
+    <div>
+        <label>微信号</label>
+        @Html.EditorFor(model => model.wechat)
+    </div>
+    <div>
+        <label>手机号码</label>
+        @Html.EditorFor(model => model.phone)
+    </div>
+    <div>
+        <label>地区</label>
+        @Html.EditorFor(model => model.area)
+    </div>
+
+    <div><input type="submit" id="btnSub" value="保存" /></div>
+
+    @*}*@
+</form>
+<div>
+    @Html.ActionLink("返回", "AgentAll", new { lv = ViewBag.level })
+
+</div>

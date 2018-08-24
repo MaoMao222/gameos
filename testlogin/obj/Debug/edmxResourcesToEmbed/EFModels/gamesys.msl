@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="gameModelStoreContainer" CdmEntityContainer="gameEntities">
+    <EntitySetMapping Name="game_user_account">
+      <EntityTypeMapping TypeName="gameModel.game_user_account">
+        <MappingFragment StoreEntitySet="game_user_account">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Accounts" ColumnName="Accounts" />
+          <ScalarProperty Name="LogonPass" ColumnName="LogonPass" />
+          <ScalarProperty Name="InsurePass" ColumnName="InsurePass" />
+          <ScalarProperty Name="nick_name" ColumnName="nick_name" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
+          <ScalarProperty Name="RegisterMachine" ColumnName="RegisterMachine" />
+          <ScalarProperty Name="WechatUid" ColumnName="WechatUid" />
+          <ScalarProperty Name="Gold" ColumnName="Gold" />
+          <ScalarProperty Name="Ingot" ColumnName="Ingot" />
+          <ScalarProperty Name="clienttype" ColumnName="clienttype" />
+          <ScalarProperty Name="client_area" ColumnName="client_area" />
+          <ScalarProperty Name="client_channel" ColumnName="client_channel" />
+          <ScalarProperty Name="client_app" ColumnName="client_app" />
+          <ScalarProperty Name="client_version" ColumnName="client_version" />
+          <ScalarProperty Name="client_pkg" ColumnName="client_pkg" />
+          <ScalarProperty Name="keyword" ColumnName="keyword" />
+          <ScalarProperty Name="head_url" ColumnName="head_url" />
+          <ScalarProperty Name="wechat_unionid" ColumnName="wechat_unionid" />
+          <ScalarProperty Name="bind_number" ColumnName="bind_number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

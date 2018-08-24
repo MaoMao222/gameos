@@ -1,0 +1,45 @@
+﻿@using PagedList.Mvc;
+@model PagedList.IPagedList<testlogin.EFModels.log_gamelogin>
+
+@{
+    ViewBag.Title = "LogAll";
+    Layout = "~/Views/Admin/_LayoutAdmin.cshtml";
+}
+
+<table>
+    <tr>
+        <th>游戏ID</th>
+        <th>设备</th>
+        <th>IP</th>
+        <th>时间</th>
+        <th>code</th>
+    </tr>
+    @*@foreach (log_gamelogin n in ViewData["logdatalist"] as PagedList.IPagedList<log_gamelogin>)
+    {
+        <tr>
+            <td>@n.kindid</td>
+            <td>@n.serverid</td>
+            <td>@n.clientip</td>
+            <td>@n.logtime</td>
+            <td>@n.code</td>
+        </tr>*@
+    @foreach (var item1 in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item1.kindid)</td>
+            <td>@Html.DisplayFor(modelItem => item1.serverid)</td>
+            <td>@Html.DisplayFor(modelItem => item1.clientip)</td>
+            <td>@Html.DisplayFor(modelItem => item1.logtime)</td>
+            <td>@Html.DisplayFor(modelItem => item1.code)</td>
+        </tr>
+    @*}*@
+    }
+    <tr>
+        <th></th>
+        <th> 共 @Model.PageCount 页，当前第 @Model.PageNumber 页</th>
+        <th>@Html.PagedListPager(Model, page => Url.Action("LogAll", "Admin", new { page }))</th>
+        <th></th>
+        <th></th>
+    </tr>
+</table>
+

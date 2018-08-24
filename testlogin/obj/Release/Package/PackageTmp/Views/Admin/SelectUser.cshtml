@@ -1,0 +1,35 @@
+﻿@model testlogin.EFModels.game_user_account
+@{
+    Layout = "~/Views/Admin/_LayoutAdmin.cshtml";
+}
+
+<table>
+    <tr>
+        <th>用户ID</th>
+        <th>昵称</th>
+        <th>性别</th>
+        <th>注册时间</th>
+        <th>WechatUid</th>
+        <th>金币</th>
+        <th>钻石</th>
+    </tr>
+    <tr>
+        @{ 
+            string xb;
+            if(Model.Gender == 1)
+            {
+                xb = "男";
+            }
+            else { xb = "女"; }
+        }
+        <th>
+        
+        @Html.DisplayFor(modelItem => modelItem.UserID)</th>
+        <th>@Html.DisplayFor(modelItem => modelItem.nick_name)</th>
+        <th>@xb</th>
+        <th>@Html.DisplayFor(modelItem => modelItem.RegisterDate)</th>
+        <th>@Html.DisplayFor(modelItem => modelItem.WechatUid)</th>
+        <th>@Html.DisplayFor(modelItem => modelItem.Gold)</th>
+        <th>@Html.DisplayFor(modelItem => modelItem.Ingot)</th>
+    </tr>
+</table>

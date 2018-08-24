@@ -1,0 +1,43 @@
+﻿@model testlogin.EFModels.game_config_award
+@{
+    ViewBag.Title = "AWEdit";
+    Layout = "~/Views/SuperAdmin/_LayoutHTML5Page.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Aw修改</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.id)
+        <div>
+            @Html.LabelFor(model => model.award_des)
+            @Html.EditorFor(model => model.award_des)
+            @Html.ValidationMessageFor(model => model.award_des)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.ingot)
+            @Html.EditorFor(model => model.ingot)
+            @Html.ValidationMessageFor(model => model.ingot)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.gold)
+            @Html.EditorFor(model => model.gold)
+            @Html.ValidationMessageFor(model => model.gold)
+        </div>
+        <div><input type="submit" value="修改" /></div>
+
+    }
+    <div>
+        @Html.ActionLink("返回", "Award")
+
+    </div>
+
+

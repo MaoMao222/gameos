@@ -1,0 +1,137 @@
+﻿@model IEnumerable<testlogin.Models.UserModel>
+
+@{
+    ViewBag.Title = "玩家管理";
+    Layout = "~/Views/SuperAdmin/_LayoutHTML5Page.cshtml";
+}
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">玩家管理</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+@*<div>*@
+    @*@using (Html.BeginForm())
+    {*@
+        @*@Html.AntiForgeryToken()*@
+
+        @*@Html.ValidationSummary(true)
+
+        <input type="text" name="id" placeholder="请输入用户id" />
+        <button type="submit" class="submit" ><span></span>查询</button>*@
+
+    @*}*@
+    @*<button type="submit" class="submit" id="loginButton"><span></span>查询</button>
+</div>*@
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                    <thead>
+                        <tr>
+                            <th>用户ID</th>
+                            <th>昵称</th>
+                            <th>性别</th>
+                            <th>注册时间</th>
+                            <th>WechatUid</th>
+                            <th>金币</th>
+                            <th>钻石</th>
+                            <th>累计消耗钻石</th>
+                            <th>消耗钻石排名</th>
+                            <th>修改</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+
+                        <tr class="gradeA">
+                            @{
+                                string xb;
+                                if (item.gua.Gender == 1)
+                                {
+                                    xb = "男";
+                                }
+                                else { xb = "女"; }
+                                if (item.use_ingot.IndexOf("-") > -1)
+                                {
+                                    item.use_ingot = item.use_ingot.Replace("-", string.Empty);
+                                }
+                            }
+                            <td>@item.UserID</td>
+                            <td>@item.gua.nick_name</td>
+                            <td>@xb</td>
+                            <td>@item.gua.RegisterDate</td>
+                            <td class="center">@item.gua.WechatUid</td>
+                            <td class="center">@item.gua.Gold</td>
+                            <td class="center">@item.gua.Ingot</td>
+                            <td class="center">@item.use_ingot</td>
+                            <td class="center">@item.paiming</td>
+                            <td class="center">@Html.ActionLink("修改", "UserAccountEdit", new { id = item.UserID })</td>
+
+                        </tr>
+
+                        }
+                    </tbody>
+                </table>
+                <!-- /.table-responsive -->
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+        @*<table>
+            <tr>
+                <th>用户ID</th>
+                <th>昵称</th>
+                <th>性别</th>
+                <th>注册时间</th>
+                <th>WechatUid</th>
+                <th>金币</th>
+                <th>钻石</th>
+                <th>修改</th>
+            </tr>
+@foreach (var item in Model)
+{
+            <tr>
+                @{
+                    string xb;
+                    if (item.Gender == 1)
+                    {
+                        xb = "男";
+                    }
+                    else { xb = "女"; }
+                }
+                <th>@Html.DisplayFor(modelItem => item.UserID)</th>
+                <th>@Html.DisplayFor(modelItem => item.nick_name)</th>
+                <th>@xb</th>
+                <th>@Html.DisplayFor(modelItem => item.RegisterDate)</th>
+                <th>@Html.DisplayFor(modelItem => item.WechatUid)</th>
+                <th>@Html.DisplayFor(modelItem => item.Gold)</th>
+                <th>@Html.DisplayFor(modelItem => item.Ingot)</th>
+                <td>@Html.ActionLink("修改", "UserAccountEdit", new { id = item.UserID })</td>
+            </tr>
+                    }
+            <tr>
+                <th></th>
+                <th> 共 @Model.PageCount 页，当前第 @Model.PageNumber 页</th>
+                <th>@Html.PagedListPager(Model, page => Url.Action("UserAccount", "SuperAdmin", new { page }))</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </table>*@
+     
+

@@ -1,0 +1,743 @@
+
+/*主要内容*/
+.content-nav {
+  font-size: 16px;
+  margin-top: 14px;
+  border-bottom: 1px solid #e1e1e1;
+  padding: 0 0 10px 0;
+}
+
+.content-nav span {
+  text-indent: 8px;
+  border-left: 2px solid #88B7E0;
+  padding-left: 10px;
+}
+
+.table1 {
+  margin: 20px 0;
+}
+
+.select-icon {
+  display: inline-block;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #999;
+  vertical-align: middle;
+}
+
+.icon-select {
+  font-size: 12px;
+  border-radius: 0;
+  padding: 0;
+  min-width: 80px;
+  border: 1px solid #e1e1e1;
+  margin-top: 10px;
+}
+
+.menu-select ul li {
+  padding: 5px 0;
+}
+
+.menu-select ul li:hover {
+  background-color: #f5f6fa;
+}
+
+.slide-right {
+  position: relative;
+  left: 0;
+  margin-left: 200px;
+  background-color: #fff;
+  padding: 0 14px 14px;
+  overflow: hidden;
+  overflow-y: auto;
+  min-height: 924px;
+}
+
+.slide-right-min {
+  margin-left: 80px;
+}
+
+.slide-nav {
+  border-bottom: 1px solid #DDD;
+  padding: 20px 0;
+  min-height: 70px;
+}
+
+.slide-right .slide-nav ul li {
+  margin: 0 10px;
+  background-color: #f7f7f7;
+  padding: 6px;
+  height: 32px;
+  color: #666;
+  line-height: 20px;
+  border: 1px solid rgb(221,221,221);
+  list-style: none;
+  cursor: pointer;
+}
+.slide-right .slide-nav ul li:hover{
+  background-color: #fff;
+}
+.slide-right ul li span {
+  font-size: 12px;
+  line-height: 20px;
+  height: 32px;
+  margin-left: 2px;
+  text-decoration: none;
+  color: #666;
+}
+
+.slide-right ul {
+  padding-bottom: 10px;
+}
+
+.close {
+  vertical-align: middle;
+  margin-top: -3px;
+}
+
+.close-none {
+  display: none;
+}
+
+input[name=text], input[name=deploy], input[name=filename] {
+  width: 260px;
+  border: 1px solid #e1e6eb;
+  padding: 8px;
+}
+
+table {
+  width: 100%;
+  border: 1px solid #e1e6eb;
+  border-collapse: initial;
+}
+
+.table-head {
+  margin-top: 10px;
+}
+
+th, td {
+  border: none;
+  border-bottom: 1px solid #eee;
+  height: 60px;
+  text-align: center;
+}
+
+.table tr th {
+  padding: 8px 8px;
+  color: #999;
+  border-bottom: 1px solid #e1e6eb;
+  background-color: #F5F6FA;
+  border-right: 1px solid #e1e6eb;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.table-body table {
+  border: none;
+}
+
+th {
+  background-color: #f5f6fa;
+  height: 30px;
+  border-bottom: 1px solid #e1e1e1;
+  color: #999;
+}
+
+.table {
+  background: #FFF;
+  font-size: 12px;
+  border: 1px solid #e1e6eb;
+}
+
+.table-body {
+  width: 100%;
+  overflow: auto;
+  height: 250px;
+  border: 1px solid #e1e1e1;
+  border-top: 0;
+}
+
+.table td.table-body tr {
+  border: none;
+}
+
+tr:hover {
+  background-color: #f9f9fa;
+}
+
+.tab-btn {
+  margin-left: 2px;
+  color: #09c;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.table tr span {
+  margin-right: 5px;
+}
+
+ .package-fileName {
+  min-width: 270px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.pack,.clear {
+  background-color: #09c;
+  padding: 8px 20px;
+  border: 1px solid #09c;
+  color: #fff;
+}
+.pack:hover,.clear:hover{
+  background-color: rgb(40,181,214);
+  border: 1px solid rgb(40,181,214);
+}
+.button {
+  margin: 20px auto;
+}
+
+.pack-btn {
+  text-align: right;
+}
+
+.modal-table tr td, .modal-table tr th {
+  text-align: left;
+  padding-left: 10px;
+  width: 80px;
+}
+
+.modal-table tr td {
+  height: 60px;
+}
+
+.modal-table tr th {
+  height: 30px;
+}
+
+.fileName {
+  width: 80px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+#tab-body {
+  padding-top: 0;
+  padding-left: 0;
+  text-align: center;
+}
+.pack-status{
+  color: #090;
+}
+#table_box,.pack-modal{
+ position: relative
+}
+#table_scroll .tab-head, #tab-body{
+  table-layout:fixed;
+}
+.noneInfoMessage{
+  text-align: center;
+  margin: 50px auto 0;
+  font-size: 18px;
+}
+#packageList thead >tr>th:nth-child(1),#packageList thead >tr>th:nth-child(2){
+  width: 100px;
+}
+#packageList thead >tr>th:nth-child(4),#packageList thead >tr>th:nth-child(5){
+  width: 200px;
+}
+#packageList thead >tr>th:nth-child(6){
+  width: 300px;
+}
+.pack-filename{
+  min-width: 270px;
+}
+.pack-clear:hover,.pack-pause:hover,.download:hover,.delete:hover{
+  color: #2a6496;
+  text-decoration: underline;
+}
+
+.btn-show{
+  background-color: #dfdfdf;
+  border: 1px  solid #dfdfdf;
+}
+.content-nav,.slide-nav,#table_scroll,.pack-btn,.table-head,.start-packing-list,.startPack,.button-group{
+	min-width: 600px;
+}
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar
+{
+  width: 8px;
+  height: 8px;
+  background-color: #F2F2F2;
+}
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
+  border-radius: 6px;
+  background-color: #F2F2F2;
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb
+{
+  border-radius: 6px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.2);
+  background-color: #09c;
+}
+::-webkit-scrollbar:vertical{
+  width: 0px;
+}
+/*/主要内容*/
+
+/*弹框*/
+/*新增游戏*/
+
+.modal-body .name {
+  width: 100px;
+  text-align: right;
+  display: inline-block;
+}
+
+.modal-con {
+  margin-top: 100px;
+}
+
+.child-game, .ditch, .female-bag {
+  margin: 23px auto 10px;
+  overflow: hidden;
+}
+
+.child-game h2 {
+  font-size: 14px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+}
+
+.child-box {
+  position: relative;
+  width: 100%;
+  min-height: 60px;
+  border-radius: 5px;
+  border: 1px solid #e1e1e1;
+  padding: 8px;
+}
+
+.label {
+  margin: 5px;
+  display: inline-block;
+  padding: 8px 10px;
+}
+
+.child-sel ul li {
+  list-style: none;
+  padding: 5px;
+}
+
+.child-sel ul li:hover {
+  background-color: #e1e1e1;
+}
+
+.child-sel {
+  position: absolute;
+  width: 93%;
+  border: 1px solid #e1e1e1;
+  display: none;
+  z-index: 111;
+  background-color: #fff;
+  border-radius: 5px;
+  overflow: auto;
+}
+
+.game-content, .female-bag {
+  height: 100px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border: 1px solid #ccc;
+}
+
+.game-content ul li {
+  list-style: none;
+  float: left;
+  margin: 10px 5px;
+  width: 20%;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.game-name {
+  padding: 5px 8px;
+  border: 1px solid #ccc;
+}
+
+.label-close {
+  padding-left: 5px;
+  cursor: pointer;
+}
+.game-table >tr >td{
+  width: 60px;
+}
+
+/*/新增游戏*/
+/*新增渠道*/
+.game-body, .ditch-body {
+  padding: 14px 14px 14px 0;
+  border: 1px solid #ccc;
+  margin-left: 10px;
+}
+
+.select {
+  padding: 5px 6px;
+  width: 300px;
+  border: 1px solid #e1e6eb;
+}
+
+.delete,.pause,.pack-delete,.line {
+  color: #09c;
+  margin-right: 5px;
+}
+
+.add {
+  font-size: 20px;
+  padding-top: 20px;
+  vertical-align: middle;
+}
+
+.add-pack, .add-pck1, .add-replace {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.channel-package {
+  border: none;
+}
+
+input[name=pck] {
+  border: none;
+  padding: 8px 0;
+  width: 80px;
+}
+
+.ditch {
+  position: relative;
+}
+
+#myAlert, #myAlert1 {
+  position: absolute;
+  display: none;
+  width: 300px;
+  height: 50px;
+  z-index: 12;
+  top: 63px;
+  left: 130px;
+}
+
+/*新增渠道*/
+/*母包管理*/
+.hint{
+  color: red;
+  margin-left: 5px;
+}
+.game-content p {
+  padding: 14px;
+}
+
+input[name="file"] {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  margin: 10px;
+}
+
+.female-bag {
+  height: 200px;
+}
+
+.manage-content {
+  padding: 40px 14px 14px 0;
+  margin-left: 10px;
+}
+
+.ui_button {
+  width: 300px;
+  padding: 15px 20px;
+  border: 1px solid #e1e6eb;
+}
+
+.badge-del {
+  margin: 10px;
+}
+
+input[name= url] {
+  width: 260px;
+  border: 1px solid #e1e6eb;
+  padding: 8px;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  position: absolute;
+  z-index: 10;
+}
+
+.bag-span {
+  vertical-align: top;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.xFile, .upload-url {
+  width: 260px;
+}
+
+#pack-manage .pck, #pack-manage .xFile, #pack-manage .upload-url {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+}
+
+/*母包管理*/
+/*包的信息结构*/
+.info {
+  height: 700px;
+}
+
+.package-menu ul {
+  background-color: #cacaca;
+}
+
+.package-menu ul li {
+  position: relative;
+  width: 33.3333%;
+  display: inline-block;
+  float: left;
+  list-style: none;
+  color: #fff;
+  padding: 5px 20px;
+  line-height: 20px;
+  text-align: center;
+}
+
+.hide {
+  display: none;
+}
+
+.package-menu ul li.first span, .package-menu ul li.second span, .package-menu ul li.third span {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  transform: rotate(45deg);
+  margin-right: -192px;
+  /* margin-top: -2px; */
+  position: absolute;
+  z-index: 3;
+  right: 178px;
+  border-top: 3px solid #fff;
+  border-right: 3px solid #fff;
+}
+
+.color {
+  background-color: #09c;
+}
+
+.color-gray {
+  background-color: #cacaca;
+}
+
+.package-menu ul li.on {
+  background-color: #09c;
+}
+
+.package-menu ul {
+  margin: 0 0 20px 0;
+}
+
+.package-info h2 {
+  text-align: center;
+  margin: 30px auto;
+  font-weight: 400;
+}
+
+.game-info {
+  color: #999;
+}
+
+.icon {
+  height: 55px;
+}
+
+.btn-file {
+  padding: 5px 20px;
+  border: 1px solid #e1e1e1;
+}
+
+#replace {
+  width: 300px;
+  color: #999;
+  border: 1px solid #e1e6eb;
+  padding: 8px;
+  height: 40px;
+}
+
+.none,#pageY{
+  display: none;
+}
+
+.tab-content .modal-footer {
+  margin-top: 40px;
+}
+
+.place {
+  position: relative;
+}
+
+.replace-div {
+  position: absolute;
+  z-index: 222;
+  margin-top: 10px;
+  width: 100px;
+  border-radius: 5px;
+  display: none;
+}
+
+.replace-txt {
+  width: 100px;
+  border: 1px solid #e1e1e1;
+  height: 50px;
+}
+
+.replace-btn {
+  border: 1px solid #e1e1e1;
+  margin-top: 5px;
+  color: #999;
+  background-color: #fff;
+  padding: 8px;
+}
+
+.error ,.required{
+  color: red;
+  margin-left: 5px;
+}
+.required{
+  font-size: 20px;
+  vertical-align: bottom;
+
+}
+input[type=file] {
+  border: none;
+}
+
+.upload {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  background: url(../img/plus.png) no-repeat center #F5F8FA;
+  background-size: 40px 40px;
+  margin: 10px auto;
+}
+
+#game-icon-file, #game-package-file {
+  display: inline-block;
+  width: 96px;
+  height: 96px;
+}
+
+input[name=file0] {
+  filter: alpha(opacity=0);
+  opacity: 0;
+}
+
+#upload-img, #upload-pic {
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 999;
+  width: 96px;
+  height: 96px;
+}
+
+.modal-table {
+  margin-bottom: 20px;
+}
+
+.modal-table tbody tr {
+  border: 1px solid #e1e1e1;
+
+}
+
+input[name=replace],input[name=add-text]  {
+  width: 200px;
+  color: #999;
+  border: 1px solid #e1e6eb;
+  padding: 8px;
+}
+
+.file, #gameIconUpload, .upload-btn, .uploadBag {
+  position: relative;
+  display: inline-block;
+  background: #09c;
+  border: 1px solid #09c;
+  border-radius: 4px;
+  padding: 4px 12px;
+  overflow: hidden;
+  text-decoration: none;
+  text-indent: 0;
+  line-height: 20px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.file, #gameIconUpload, .upload-btn {
+  margin: 0 0 10px 100px;
+}
+
+.uploadBag {
+  padding: 2px 4px;
+  margin-left: 10px;
+}
+
+.file input {
+  position: absolute;
+  font-size: 100px;
+  right: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.file:hover, #gameIconUpload:hover, .upload-btn:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+#progressNumber, #progress {
+  margin: 0 0 10px 40px;
+}
+
+.isChecked {
+  display: inline-block;
+  padding-right: 40px;
+}
+
+.closePay {
+  padding-left: 40px;
+}
+
+.place-file tr td:nth-child(1) {
+  border-right: 1px solid #e1e1e1;
+}
+
+h6 {
+  text-align: center;
+}
+.else-delete {
+  margin-left: 5px;
+}
+/*/包的信息结构*/
+/*弹框*/
+

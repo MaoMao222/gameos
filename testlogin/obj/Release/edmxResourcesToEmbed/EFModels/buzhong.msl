@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="bozhong_dbModelStoreContainer" CdmEntityContainer="bozhong_dbEntities">
+    <EntitySetMapping Name="bz_game_game_friend">
+      <EntityTypeMapping TypeName="bozhong_dbModel.bz_game_game_friend">
+        <MappingFragment StoreEntitySet="bz_game_game_friend">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="gameid" ColumnName="gameid" />
+          <ScalarProperty Name="game_rule" ColumnName="game_rule" />
+          <ScalarProperty Name="room_code" ColumnName="room_code" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="roomid" ColumnName="roomid" />
+          <ScalarProperty Name="propid" ColumnName="propid" />
+          <ScalarProperty Name="propcount" ColumnName="propcount" />
+          <ScalarProperty Name="kind" ColumnName="kind" />
+          <ScalarProperty Name="totalcount" ColumnName="totalcount" />
+          <ScalarProperty Name="currcount" ColumnName="currcount" />
+          <ScalarProperty Name="tallykind" ColumnName="tallykind" />
+          <ScalarProperty Name="tallyname" ColumnName="tallyname" />
+          <ScalarProperty Name="nickname" ColumnName="nickname" />
+          <ScalarProperty Name="follow_gold" ColumnName="follow_gold" />
+          <ScalarProperty Name="end_time" ColumnName="end_time" />
+          <ScalarProperty Name="game_address" ColumnName="game_address" />
+          <ScalarProperty Name="game_port" ColumnName="game_port" />
+          <ScalarProperty Name="game_play_type" ColumnName="game_play_type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="game_config_award">
+      <EntityTypeMapping TypeName="bozhong_dbModel.game_config_award">
+        <MappingFragment StoreEntitySet="game_config_award">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="award_des" ColumnName="award_des" />
+          <ScalarProperty Name="ingot" ColumnName="ingot" />
+          <ScalarProperty Name="gold" ColumnName="gold" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="game_config_change_gold">
+      <EntityTypeMapping TypeName="bozhong_dbModel.game_config_change_gold">
+        <MappingFragment StoreEntitySet="game_config_change_gold">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ingot" ColumnName="ingot" />
+          <ScalarProperty Name="gold" ColumnName="gold" />
+          <ScalarProperty Name="des" ColumnName="des" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="game_config_email">
+      <EntityTypeMapping TypeName="bozhong_dbModel.game_config_email">
+        <MappingFragment StoreEntitySet="game_config_email">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="detail" ColumnName="detail" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="game_config_product">
+      <EntityTypeMapping TypeName="bozhong_dbModel.game_config_product">
+        <MappingFragment StoreEntitySet="game_config_product">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="kind_id" ColumnName="kind_id" />
+          <ScalarProperty Name="product_name" ColumnName="product_name" />
+          <ScalarProperty Name="product_price" ColumnName="product_price" />
+          <ScalarProperty Name="bind_buy_send" ColumnName="bind_buy_send" />
+          <ScalarProperty Name="product_num" ColumnName="product_num" />
+          <ScalarProperty Name="describe" ColumnName="describe" />
+          <ScalarProperty Name="key_word" ColumnName="key_word" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="game_config_robot_info">
+      <EntityTypeMapping TypeName="bozhong_dbModel.game_config_robot_info">
+        <MappingFragment StoreEntitySet="game_config_robot_info">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="kind" ColumnName="kind" />
+          <ScalarProperty Name="server_id" ColumnName="server_id" />
+          <ScalarProperty Name="server_time" ColumnName="server_time" />
+          <ScalarProperty Name="min_play_draw" ColumnName="min_play_draw" />
+          <ScalarProperty Name="max_play_draw" ColumnName="max_play_draw" />
+          <ScalarProperty Name="min_repose_time" ColumnName="min_repose_time" />
+          <ScalarProperty Name="max_repose_time" ColumnName="max_repose_time" />
+          <ScalarProperty Name="server_gender" ColumnName="server_gender" />
+          <ScalarProperty Name="min_score" ColumnName="min_score" />
+          <ScalarProperty Name="max_score" ColumnName="max_score" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="game_config_room">
+      <EntityTypeMapping TypeName="bozhong_dbModel.game_config_room">
+        <MappingFragment StoreEntitySet="game_config_room">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="gameid" ColumnName="gameid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="roomid" ColumnName="roomid" />
+          <ScalarProperty Name="tablecount" ColumnName="tablecount" />
+          <ScalarProperty Name="chaircount" ColumnName="chaircount" />
+          <ScalarProperty Name="roomname" ColumnName="roomname" />
+          <ScalarProperty Name="roomtype" ColumnName="roomtype" />
+          <ScalarProperty Name="roommode" ColumnName="roommode" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="port" ColumnName="port" />
+          <ScalarProperty Name="modulename" ColumnName="modulename" />
+          <ScalarProperty Name="ruleenter" ColumnName="ruleenter" />
+          <ScalarProperty Name="rulegame" ColumnName="rulegame" />
+          <ScalarProperty Name="rulecustom" ColumnName="rulecustom" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="game_config_route">
+      <EntityTypeMapping TypeName="bozhong_dbModel.game_config_route">
+        <MappingFragment StoreEntitySet="game_config_route">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="game_address" ColumnName="game_address" />
+          <ScalarProperty Name="game_port" ColumnName="game_port" />
+          <ScalarProperty Name="kind_id" ColumnName="kind_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="game_config_test_game">
+      <EntityTypeMapping TypeName="bozhong_dbModel.game_config_test_game">
+        <MappingFragment StoreEntitySet="game_config_test_game">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="count" ColumnName="count" />
+          <ScalarProperty Name="min_niu" ColumnName="min_niu" />
+          <ScalarProperty Name="max_niu" ColumnName="max_niu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="game_game_friend">
+      <EntityTypeMapping TypeName="bozhong_dbModel.game_game_friend">
+        <MappingFragment StoreEntitySet="game_game_friend">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="gameid" ColumnName="gameid" />
+          <ScalarProperty Name="room_code" ColumnName="room_code" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="propcount" ColumnName="propcount" />
+          <ScalarProperty Name="totalcount" ColumnName="totalcount" />
+          <ScalarProperty Name="nickname" ColumnName="nickname" />
+          <ScalarProperty Name="end_time" ColumnName="end_time" />
+          <ScalarProperty Name="game_address" ColumnName="game_address" />
+          <ScalarProperty Name="game_port" ColumnName="game_port" />
+          <ScalarProperty Name="game_create_detail" ColumnName="game_create_detail" />
+          <ScalarProperty Name="create_type" ColumnName="create_type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="game_game_score_change">
+      <EntityTypeMapping TypeName="bozhong_dbModel.game_game_score_change">
+        <MappingFragment StoreEntitySet="game_game_score_change">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="WinCount" ColumnName="WinCount" />
+          <ScalarProperty Name="LostCount" ColumnName="LostCount" />
+          <ScalarProperty Name="DrawCount" ColumnName="DrawCount" />
+          <ScalarProperty Name="FleeCount" ColumnName="FleeCount" />
+          <ScalarProperty Name="UserRight" ColumnName="UserRight" />
+          <ScalarProperty Name="MasterRight" ColumnName="MasterRight" />
+          <ScalarProperty Name="PlayTimeCount" ColumnName="PlayTimeCount" />
+          <ScalarProperty Name="AllLogonTimes" ColumnName="AllLogonTimes" />
+          <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
+          <ScalarProperty Name="LastLogonDate" ColumnName="LastLogonDate" />
+          <ScalarProperty Name="LogonGold" ColumnName="LogonGold" />
+          <ScalarProperty Name="ChangeGold" ColumnName="ChangeGold" />
+          <ScalarProperty Name="LastPlayTimeCount" ColumnName="LastPlayTimeCount" />
+          <ScalarProperty Name="LastWinCount" ColumnName="LastWinCount" />
+          <ScalarProperty Name="LastLostCount" ColumnName="LastLostCount" />
+          <ScalarProperty Name="LastDrawCount" ColumnName="LastDrawCount" />
+          <ScalarProperty Name="LastScore" ColumnName="LastScore" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="game_user_account">
+      <EntityTypeMapping TypeName="bozhong_dbModel.game_user_account">
+        <MappingFragment StoreEntitySet="game_user_account">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Accounts" ColumnName="Accounts" />
+          <ScalarProperty Name="LogonPass" ColumnName="LogonPass" />
+          <ScalarProperty Name="InsurePass" ColumnName="InsurePass" />
+          <ScalarProperty Name="nick_name" ColumnName="nick_name" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
+          <ScalarProperty Name="RegisterMachine" ColumnName="RegisterMachine" />
+          <ScalarProperty Name="WechatUid" ColumnName="WechatUid" />
+          <ScalarProperty Name="Gold" ColumnName="Gold" />
+          <ScalarProperty Name="Ingot" ColumnName="Ingot" />
+          <ScalarProperty Name="clienttype" ColumnName="clienttype" />
+          <ScalarProperty Name="client_area" ColumnName="client_area" />
+          <ScalarProperty Name="client_channel" ColumnName="client_channel" />
+          <ScalarProperty Name="client_app" ColumnName="client_app" />
+          <ScalarProperty Name="client_version" ColumnName="client_version" />
+          <ScalarProperty Name="client_pkg" ColumnName="client_pkg" />
+          <ScalarProperty Name="keyword" ColumnName="keyword" />
+          <ScalarProperty Name="head_url" ColumnName="head_url" />
+          <ScalarProperty Name="wechat_unionid" ColumnName="wechat_unionid" />
+          <ScalarProperty Name="bind_number" ColumnName="bind_number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="game_user_address">
+      <EntityTypeMapping TypeName="bozhong_dbModel.game_user_address">
+        <MappingFragment StoreEntitySet="game_user_address">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="address_ip" ColumnName="address_ip" />
+          <ScalarProperty Name="logtime" ColumnName="logtime" />
+          <ScalarProperty Name="mac" ColumnName="mac" />
+          <ScalarProperty Name="session" ColumnName="session" />
+          <ScalarProperty Name="login_count" ColumnName="login_count" />
+          <ScalarProperty Name="promoter_id" ColumnName="promoter_id" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="game_user_player">
+      <EntityTypeMapping TypeName="bozhong_dbModel.game_user_player">
+        <MappingFragment StoreEntitySet="game_user_player">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="game_address" ColumnName="game_address" />
+          <ScalarProperty Name="game_port" ColumnName="game_port" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="game_version_config">
+      <EntityTypeMapping TypeName="bozhong_dbModel.game_version_config">
+        <MappingFragment StoreEntitySet="game_version_config">
+          <ScalarProperty Name="game_id" ColumnName="game_id" />
+          <ScalarProperty Name="min_ver" ColumnName="min_ver" />
+          <ScalarProperty Name="cur_ver" ColumnName="cur_ver" />
+          <ScalarProperty Name="max_ver" ColumnName="max_ver" />
+          <ScalarProperty Name="int_mask1" ColumnName="int_mask1" />
+          <ScalarProperty Name="int_mask2" ColumnName="int_mask2" />
+          <ScalarProperty Name="int_mask3" ColumnName="int_mask3" />
+          <ScalarProperty Name="wechat_app_id" ColumnName="wechat_app_id" />
+          <ScalarProperty Name="wechat_app_secert" ColumnName="wechat_app_secert" />
+          <ScalarProperty Name="login_mask1" ColumnName="login_mask1" />
+          <ScalarProperty Name="login_mask2" ColumnName="login_mask2" />
+          <ScalarProperty Name="login_mask3" ColumnName="login_mask3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="log_create_table">
+      <EntityTypeMapping TypeName="bozhong_dbModel.log_create_table">
+        <MappingFragment StoreEntitySet="log_create_table">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="gameid" ColumnName="gameid" />
+          <ScalarProperty Name="propcount" ColumnName="propcount" />
+          <ScalarProperty Name="logtime" ColumnName="logtime" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="game_create_detail" ColumnName="game_create_detail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="log_friend_game_every_score">
+      <EntityTypeMapping TypeName="bozhong_dbModel.log_friend_game_every_score">
+        <MappingFragment StoreEntitySet="log_friend_game_every_score">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="detail" ColumnName="detail" />
+          <ScalarProperty Name="logtime" ColumnName="logtime" />
+          <ScalarProperty Name="landlord" ColumnName="landlord" />
+          <ScalarProperty Name="int_play_count" ColumnName="int_play_count" />
+          <ScalarProperty Name="kind_id" ColumnName="kind_id" />
+          <ScalarProperty Name="room_type" ColumnName="room_type" />
+          <ScalarProperty Name="create_type" ColumnName="create_type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="log_friend_game_over">
+      <EntityTypeMapping TypeName="bozhong_dbModel.log_friend_game_over">
+        <MappingFragment StoreEntitySet="log_friend_game_over">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="play_detail" ColumnName="play_detail" />
+          <ScalarProperty Name="logtime" ColumnName="logtime" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="landlord" ColumnName="landlord" />
+          <ScalarProperty Name="kind_id" ColumnName="kind_id" />
+          <ScalarProperty Name="room_type" ColumnName="room_type" />
+          <ScalarProperty Name="create_type" ColumnName="create_type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="log_friend_game_score">
+      <EntityTypeMapping TypeName="bozhong_dbModel.log_friend_game_score">
+        <MappingFragment StoreEntitySet="log_friend_game_score">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="result" ColumnName="result" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="logtime" ColumnName="logtime" />
+          <ScalarProperty Name="kindid" ColumnName="kindid" />
+          <ScalarProperty Name="serverid" ColumnName="serverid" />
+          <ScalarProperty Name="score" ColumnName="score" />
+          <ScalarProperty Name="all_count" ColumnName="all_count" />
+          <ScalarProperty Name="win_count" ColumnName="win_count" />
+          <ScalarProperty Name="playtime" ColumnName="playtime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="log_game_order">
+      <EntityTypeMapping TypeName="bozhong_dbModel.log_game_order">
+        <MappingFragment StoreEntitySet="log_game_order">
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="order_status" ColumnName="order_status" />
+          <ScalarProperty Name="order_money" ColumnName="order_money" />
+          <ScalarProperty Name="kind_id" ColumnName="kind_id" />
+          <ScalarProperty Name="pay_type" ColumnName="pay_type" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="channel" ColumnName="channel" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="out_orderno" ColumnName="out_orderno" />
+          <ScalarProperty Name="pay_time" ColumnName="pay_time" />
+          <ScalarProperty Name="pay_money" ColumnName="pay_money" />
+          <ScalarProperty Name="real_money" ColumnName="real_money" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="ingot_num" ColumnName="ingot_num" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="log_game_play_over">
+      <EntityTypeMapping TypeName="bozhong_dbModel.log_game_play_over">
+        <MappingFragment StoreEntitySet="log_game_play_over">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="play_count" ColumnName="play_count" />
+          <ScalarProperty Name="log_time" ColumnName="log_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="log_game_server_uid">
+      <EntityTypeMapping TypeName="bozhong_dbModel.log_game_server_uid">
+        <MappingFragment StoreEntitySet="log_game_server_uid">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="server_id" ColumnName="server_id" />
+          <ScalarProperty Name="server_port" ColumnName="server_port" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="log_game_share_friend">
+      <EntityTypeMapping TypeName="bozhong_dbModel.log_game_share_friend">
+        <MappingFragment StoreEntitySet="log_game_share_friend">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="log_time" ColumnName="log_time" />
+          <ScalarProperty Name="share_status" ColumnName="share_status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="log_gamelogin">
+      <EntityTypeMapping TypeName="bozhong_dbModel.log_gamelogin">
+        <MappingFragment StoreEntitySet="log_gamelogin">
+          <ScalarProperty Name="logid" ColumnName="logid" />
+          <ScalarProperty Name="logtime" ColumnName="logtime" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="kindid" ColumnName="kindid" />
+          <ScalarProperty Name="serverid" ColumnName="serverid" />
+          <ScalarProperty Name="clientip" ColumnName="clientip" />
+          <ScalarProperty Name="gold" ColumnName="gold" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="ingot" ColumnName="ingot" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="log_gamelogout">
+      <EntityTypeMapping TypeName="bozhong_dbModel.log_gamelogout">
+        <MappingFragment StoreEntitySet="log_gamelogout">
+          <ScalarProperty Name="logid" ColumnName="logid" />
+          <ScalarProperty Name="logtime" ColumnName="logtime" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="kindid" ColumnName="kindid" />
+          <ScalarProperty Name="serverid" ColumnName="serverid" />
+          <ScalarProperty Name="gold" ColumnName="gold" />
+          <ScalarProperty Name="bank" ColumnName="bank" />
+          <ScalarProperty Name="clientip" ColumnName="clientip" />
+          <ScalarProperty Name="code" ColumnName="code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="log_ingot_detail">
+      <EntityTypeMapping TypeName="bozhong_dbModel.log_ingot_detail">
+        <MappingFragment StoreEntitySet="log_ingot_detail">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="ingot_num" ColumnName="ingot_num" />
+          <ScalarProperty Name="kind_id" ColumnName="kind_id" />
+          <ScalarProperty Name="reason" ColumnName="reason" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="channel" ColumnName="channel" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="source_id" ColumnName="source_id" />
+          <ScalarProperty Name="after_ingot" ColumnName="after_ingot" />
+          <ScalarProperty Name="before_ingot" ColumnName="before_ingot" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

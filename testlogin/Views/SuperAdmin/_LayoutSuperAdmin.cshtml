@@ -1,0 +1,131 @@
+﻿
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="format-detection" content="telephone=no, address=no" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/admincss")
+    <link rel="shortcut icon" href="~/Content/img/favicon.ico">
+
+</head>
+<body>
+    <!--header-->
+    <header class="header">
+        <div class="pull-left yp-logo">
+            <div class="pull-left yp-img"><img src="~/Content/img/yp_logo2.png" /></div>
+            <h1 class="pull-right">管理系统</h1>
+        </div>
+        <div class="dropdown topbar-info-item pull-right">
+            <a href="#" class="topbar-btn" id="dropdownMenu1" data-toggle="dropdown">
+                @{ 
+                    string level = ViewBag.level;
+                    string levelname = "未赋值";
+                    switch (level)
+                    {
+                        case "9":
+                            levelname = "系统管理员" ;
+                            break;
+                        case "1":
+                            levelname = "一级代理";
+                            break;
+                        case "2":
+                            levelname = "二级代理";
+                            break;
+                        case "3":
+                            levelname = "三级代理";
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                <span id="userName">欢迎 @levelname @ViewBag.uname</span>
+
+                <span class="icon-arrow-down"></span>
+            </a>
+            <ul class="dropdown-menu login-btn" aria-labelledby="dropdownMenu1">
+                <li class="topbar-info-btn">
+
+                    <a href=@Url.Action("LoginOut", "SuperLogin")><span class="ng-binding">退出</span></a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <!--/header-->
+    <!--wrapper-->
+    <div class="wrapper clearfix">
+        <!--左侧-->
+        <div class="slide">
+            <div class="viewer-slidebar">
+                <span class="icon-unfold" id="rwer"></span>
+            </div>
+            <ul>@{ 
+                if (level == "9")
+                {
+                @*<a href="@Url.Action("Award", "SuperAdmin")"><li class="gg-examples1">Award</li></a>
+                <a href="@Url.Action("Email", "SuperAdmin")"><li class="gg-examples1">Email</li></a>
+                <a href="@Url.Action( "Product", "SuperAdmin")"><li class="gg-examples1">Product</li></a>
+                <a href="@Url.Action("Room", "SuperAdmin")"><li class="gg-examples1">Room</li></a>
+                <a href="@Url.Action("Route", "SuperAdmin")"><li class="gg-examples1">Route</li></a>
+                <a href="@Url.Action("TestGame", "SuperAdmin")"><li class="gg-examples1">TestGame</li></a>
+                <a href="@Url.Action("ChangeGold", "SuperAdmin")"><li class="gg-examples1">ChangeGold</li></a>
+                <a href="@Url.Action("LogAll", "SuperAdmin")"><li class="gg-examples1">登陆日志</li></a>
+                <a href="@Url.Action("LogOrderAll", "SuperAdmin")"><li class="gg-examples1">订单日志</li></a>
+                <a href="@Url.Action("IngotDetail", "SuperAdmin")"><li class="gg-examples1">钻石日志</li></a>*@
+                
+                <li class="gg-examples1">@Html.ActionLink("Award", "Award", "SuperAdmin") </li>
+                <li class="gg-examples1">@Html.ActionLink("email", "Email", "SuperAdmin") </li>
+                <li class="gg-examples1">@Html.ActionLink("product", "Product", "SuperAdmin") </li>
+                <li class="gg-examples1">@Html.ActionLink("room", "Room", "SuperAdmin") </li>
+                <li class="gg-examples1">@Html.ActionLink("route", "Route", "SuperAdmin") </li>
+                <li class="gg-examples1">@Html.ActionLink("test_game", "TestGame", "SuperAdmin") </li>
+                @*<li>@Html.ActionLink("version", "LogIngotDetail", "SuperAdmin") </li>
+    <li>@Html.ActionLink("game_server_uid", "LogIngotDetail", "SuperAdmin") </li>
+    <li>@Html.ActionLink("log_create_table", "LogIngotDetail", "SuperAdmin") </li>*@
+                <li class="gg-examples1">@Html.ActionLink("change_gold", "ChangeGold", "SuperAdmin") </li>
+                <li class="gg-examples1">@Html.ActionLink("登陆日志", "LogAll", "SuperAdmin") </li>
+                <li class="gg-examples1">@Html.ActionLink("订单日志", "LogOrderAll", "SuperAdmin")</li>
+                <li class="gg-examples1">@Html.ActionLink("钻石日志", "IngotDetail", "SuperAdmin") </li>
+
+                }
+                <li class="gg-examples1"><a href="@Url.Action("personal", "Proxy")"><span>个人信息</span></a></li>
+                <li class="gg-examples1"><a href="@Url.Action("UserAccount", "SuperAdmin")"><span>用户管理</span></a></li>
+                <li class="gg-examples1"><a href="@Url.Action("AgentAll", "SuperAdmin",new { lv = level })"><span>代理管理</span></a></li>
+
+                @*<li class="gg-examples1">@Html.ActionLink("个人信息", "personal", "Proxy") </li>
+                <li class="gg-examples1">@Html.ActionLink("用户管理", "UserAccount", "SuperAdmin") </li>
+                <li class="gg-examples1">@Html.ActionLink("代理管理", "AgentAll","SuperAdmin" , new { lv = level },null) </li>*@
+            }
+                
+                
+
+            </ul>
+        </div>
+        <!--/左侧-->
+        <div class="iframe">
+            <div class="slide-right">
+                <div class="content">
+                    <div class="col-sm-12">
+                    @RenderBody()
+                    @*<iframe id="j-iframe" src="packagetools.html" width="100%" height="100%"></iframe>*@
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+    <!--/wrapper-->
+    @Scripts.Render("~/Content/adminjs")
+
+    @*<script>
+        $(function(){
+                        window.isFill = true;
+                    });
+            </script>*@
+    <script src="~/Content/js/index.js"></script>
+
+</body>
+</html>

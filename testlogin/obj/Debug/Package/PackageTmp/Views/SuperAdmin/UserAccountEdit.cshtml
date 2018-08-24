@@ -1,0 +1,136 @@
+﻿@model testlogin.EFModels.game_user_account
+@using testlogin.EFModels;
+@{
+    ViewBag.Title = "玩家信息修改";
+    Layout = "~/Views/SuperAdmin/_LayoutHTML5Page.cshtml";
+    var user =  ViewData["User"] as game_user_account ;
+   
+   var user_add =  ViewData["User_add"] as game_user_address ;
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">玩家信息修改</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+
+<script type="text/javascript" language="javascript">
+    function check(form) {
+        var nummsg = document.getElementById("nummsg");
+        var resonmsg = document.getElementById("resonmsg");
+
+        if (form.num.value == '') {
+
+            nummsg.innerHTML = "<font color='red'>数量不能为空</font>";
+
+            form.nummsg.focus();
+            return false;
+        } else {
+            nummsg.innerHTML = "";
+        }
+        if (form.remake.value == '') {
+            resonmsg.innerHTML = "<font color='red'>备注不能为空</font>";
+            form.remake.focus();
+            return false;
+        } else {
+            resonmsg.innerHTML = "";
+        }
+
+        //return true;
+    }
+</script>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-lg-6">
+                    <form role="form" action="/SuperAdmin/UserAccountEdit" method="post">
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true)
+                        <input type="hidden" name="UserID" value="@user.UserID" />
+                        <div class="form-group">
+                            <label>Userid</label>
+                            <input class="form-control" id="disabledInput" type="text" placeholder="@user.UserID" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label>昵称</label>
+                            <input class="form-control" id="disabledInput" type="text" placeholder="@user.nick_name" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label>注册时间</label>
+                            <input class="form-control" id="disabledInput" type="text" placeholder="@user.RegisterDate" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label>微信</label>
+                            <input class="form-control" id="disabledInput" type="text" placeholder="@user.WechatUid" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label>绑定邀请码</label>
+                            <input class="form-control" name="bind_number" value="@user.bind_number">
+                        </div>
+                        <div class="form-group">
+                            <label>手机号</label>
+                            <input class="form-control" name="phone" value="@user_add.phone">
+                        </div>
+                        <p>
+                            <button type="submit" class="btn btn-default">修改</button>
+                            <button type="button" class="btn btn-default" onclick="window.location.href='@Url.Action("UserAccount", "SuperAdmin")'">返回</button>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+                @*<form action="/SuperAdmin/UserAccountEdit" method="post" onsubmit="return check(this)">
+
+                            @Html.AntiForgeryToken()
+
+                            @Html.ValidationSummary(true)
+                            @Html.HiddenFor(model => model.UserID)
+                            <div>
+
+                                @Html.LabelFor(model => model.UserID):
+                                @Html.DisplayFor(model => model.UserID)
+                                @Html.ValidationMessageFor(model => model.UserID)
+                            </div>
+                            <div>
+                                @Html.LabelFor(model => model.nick_name):
+                                @Html.DisplayFor(model => model.nick_name)
+                                @Html.ValidationMessageFor(model => model.nick_name)
+                            </div>
+                            <div>
+                                @Html.LabelFor(model => model.Gold):
+                                @Html.DisplayFor(model => model.Gold)
+                                @Html.ValidationMessageFor(model => model.Gold)
+                            </div>
+                            <div>
+                                @Html.LabelFor(model => model.Ingot):
+                                @Html.DisplayFor(model => model.Ingot)
+                                @Html.ValidationMessageFor(model => model.Ingot)
+                            </div>
+                            <div>
+                                <label><input type="radio" name="zjtype" value="add" checked="checked" />增加</label>
+                                <label><input type="radio" name="zjtype" value="jian" />减少</label>
+                            </div>
+                            <div>
+                                <label><input type="radio" name="gitype" value="gold" checked="checked" />金币</label>
+                                <label><input type="radio" name="gitype" value="ingot" />钻石</label>
+                            </div>
+                            <div>
+                                操作数量：<input type="text" name="num" id="num" />
+                                <span id="nummsg"></span>
+                            </div>
+                            <div>
+                                操作原因：<input type="text" name="remake" id="remake" />
+                                <span id="resonmsg"></span>
+                            </div>
+
+                            <div><input type="submit" value="修改" /></div>
+
+
+                    </form>*@

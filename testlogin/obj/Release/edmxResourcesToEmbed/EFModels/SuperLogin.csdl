@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SuperLogin_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="web_admin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="level" Type="Int32" Nullable="false" />
+    <Property Name="userid" Type="Int32" Nullable="false" />
+    <Property Name="parentid" Type="Int32" Nullable="false" />
+    <Property Name="invitecode" Type="Int32" Nullable="false" />
+    <Property Name="phone" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="real_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="accumulated_income" Type="Single" Nullable="false" />
+    <Property Name="balance" Type="Single" Nullable="false" />
+    <Property Name="up_agentid" Type="Int32" />
+    <Property Name="wechat" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="SuperLogin_dbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="web_admin" EntityType="Self.web_admin" />
+    <EntitySet Name="t_rates" EntityType="SuperLogin_dbModel.t_rates" />
+  </EntityContainer>
+  <EntityType Name="t_rates">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="rate1" Type="Single" />
+    <Property Name="rate2" Type="Single" />
+    <Property Name="rate3" Type="Single" />
+    <Property Name="rate1to2" Type="Single" />
+    <Property Name="rate1to3" Type="Single" />
+    <Property Name="rate2to3" Type="Single" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,38 @@
+﻿@model testlogin.EFModels.game_config_change_gold
+@{
+    ViewBag.Title = "ChangeGoldCreate";
+    Layout = "~/Views/SuperAdmin/_LayoutSuperAdmin.cshtml";
+}
+
+<h2>ChangeGoldCreate</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    @Html.ValidationSummary(true)
+
+    <div>
+        @Html.LabelFor(model => model.ingot)
+        @Html.EditorFor(model => model.ingot)
+        @Html.ValidationMessageFor(model => model.ingot)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.gold)
+        @Html.EditorFor(model => model.gold)
+        @Html.ValidationMessageFor(model => model.gold)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.des)
+        @Html.EditorFor(model => model.des)
+        @Html.ValidationMessageFor(model => model.des)
+    </div>
+
+
+    <div><input type="submit" value="保存" /></div>
+
+}
+<div>
+    @Html.ActionLink("返回", "ChangeGold")
+
+</div>

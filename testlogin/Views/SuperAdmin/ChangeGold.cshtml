@@ -1,0 +1,35 @@
+﻿@using PagedList.Mvc;
+@model PagedList.IPagedList<testlogin.EFModels.game_config_change_gold>
+@{
+    ViewBag.Title = "ChangeGold";
+    Layout = "~/Views/SuperAdmin/_LayoutSuperAdmin.cshtml";
+}
+
+<h2>ChangeGold</h2>
+<table>
+    <tr>
+        <th>id</th>
+        <th>ingot</th>
+        <th>gold</th>
+        <th>des</th>
+        <th>删除</th>
+    </tr>
+    @foreach (var item1 in Model)
+    {
+        <tr>
+            <td>@item1.id</td>
+            <td>@item1.ingot</td>
+            <td>@item1.gold</td>
+            <td>@item1.des</td>
+            <td>@Html.ActionLink("删除", "ChangeGoldDelete", new { id = item1.id })</td>
+
+        </tr>
+    }
+    <tr>
+        <th>@Html.ActionLink("添加", "ChangeGoldCreate")</th>
+        <th> 共 @Model.PageCount 页，当前第 @Model.PageNumber 页</th>
+        <th>@Html.PagedListPager(Model, page => Url.Action("ChangeGold", "SuperAdmin", new { page }))</th>
+        <th></th>
+        <th></th>
+    </tr>
+</table>

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SuperLogin_dbModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="t_rates">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="rate1" Type="float" />
+    <Property Name="rate2" Type="float" />
+    <Property Name="rate3" Type="float" />
+    <Property Name="rate1to2" Type="float" />
+    <Property Name="rate1to3" Type="float" />
+    <Property Name="rate2to3" Type="float" />
+  </EntityType>
+  <EntityType Name="web_admin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="level" Type="int" Nullable="false" />
+    <Property Name="userid" Type="int" Nullable="false" />
+    <Property Name="parentid" Type="int" Nullable="false" />
+    <Property Name="invitecode" Type="int" />
+    <Property Name="phone" Type="varchar" MaxLength="11" />
+    <Property Name="real_name" Type="varchar" MaxLength="255" />
+    <Property Name="accumulated_income" Type="float" Nullable="false" />
+    <Property Name="balance" Type="float" Nullable="false" />
+    <Property Name="up_agentid" Type="int" />
+    <Property Name="wechat" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityContainer Name="SuperLogin_dbModelStoreContainer">
+    <EntitySet Name="t_rates" EntityType="Self.t_rates" Schema="bozhong_db" store:Type="Tables" />
+    <EntitySet Name="web_admin" EntityType="Self.web_admin" Schema="bozhong_db" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

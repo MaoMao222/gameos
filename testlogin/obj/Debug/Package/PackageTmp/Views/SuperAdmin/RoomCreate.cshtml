@@ -1,0 +1,106 @@
+﻿@model testlogin.EFModels.game_config_room
+@{
+    ViewBag.Title = "RoomCreate";
+    Layout = "~/Views/SuperAdmin/_LayoutHTML5Page.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">添加房间</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    @Html.ValidationSummary(true)
+
+    <div>
+        @Html.LabelFor(model => model.id)
+        @Html.EditorFor(model => model.id)
+        @Html.ValidationMessageFor(model => model.id)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.gameid)
+        @Html.EditorFor(model => model.gameid)
+        @Html.ValidationMessageFor(model => model.gameid)
+    </div>
+        <div>
+            @Html.LabelFor(model => model.name)
+            @Html.EditorFor(model => model.name)
+            @Html.ValidationMessageFor(model => model.name)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.roomid)
+            @Html.EditorFor(model => model.roomid)
+            @Html.ValidationMessageFor(model => model.roomid)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.tablecount)
+            @Html.EditorFor(model => model.tablecount)
+            @Html.ValidationMessageFor(model => model.tablecount)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.chaircount)
+            @Html.EditorFor(model => model.chaircount)
+            @Html.ValidationMessageFor(model => model.chaircount)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.roomname)
+            @Html.EditorFor(model => model.roomname)
+            @Html.ValidationMessageFor(model => model.roomname)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.roomtype)
+            @Html.EditorFor(model => model.roomtype)
+            @Html.ValidationMessageFor(model => model.roomtype)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.roommode)
+            @Html.EditorFor(model => model.roommode)
+            @Html.ValidationMessageFor(model => model.roommode)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.address)
+            @Html.EditorFor(model => model.address)
+            @Html.ValidationMessageFor(model => model.address)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.port)
+            @Html.EditorFor(model => model.port)
+            @Html.ValidationMessageFor(model => model.port)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.modulename)
+            @Html.EditorFor(model => model.modulename)
+            @Html.ValidationMessageFor(model => model.modulename)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.ruleenter)
+            @Html.EditorFor(model => model.ruleenter)
+            @Html.ValidationMessageFor(model => model.ruleenter)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.rulegame)
+            @Html.EditorFor(model => model.rulegame)
+            @Html.ValidationMessageFor(model => model.rulegame)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.rulecustom)
+            @Html.EditorFor(model => model.rulecustom)
+            @Html.ValidationMessageFor(model => model.rulecustom)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.status)
+            @Html.EditorFor(model => model.status)
+            @Html.ValidationMessageFor(model => model.status)
+        </div>
+        <div><input type="submit" value="保存" /></div>
+
+}
+<div>
+    @Html.ActionLink("返回", "Room")
+
+</div>
+

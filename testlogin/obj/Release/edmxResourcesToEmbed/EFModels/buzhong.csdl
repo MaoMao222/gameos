@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="bozhong_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="bz_game_game_friend">
+    <Key>
+      <PropertyRef Name="room_code" />
+    </Key>
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="gameid" Type="Int32" />
+    <Property Name="game_rule" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
+    <Property Name="room_code" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="create_time" Type="DateTime" />
+    <Property Name="roomid" Type="Int32" />
+    <Property Name="propid" Type="Int32" />
+    <Property Name="propcount" Type="Int32" />
+    <Property Name="kind" Type="Int32" />
+    <Property Name="totalcount" Type="Int32" />
+    <Property Name="currcount" Type="Int32" />
+    <Property Name="tallykind" Type="Int32" />
+    <Property Name="tallyname" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="nickname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="follow_gold" Type="Int32" />
+    <Property Name="end_time" Type="Int32" />
+    <Property Name="game_address" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="game_port" Type="Int32" />
+    <Property Name="game_play_type" Type="Int32" />
+  </EntityType>
+  <EntityType Name="game_config_award">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="award_des" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ingot" Type="Int32" />
+    <Property Name="gold" Type="Int32" />
+  </EntityType>
+  <EntityType Name="game_config_change_gold">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="ingot" Type="Int32" Nullable="false" />
+    <Property Name="gold" Type="Int32" Nullable="false" />
+    <Property Name="des" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="game_config_email">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="detail" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="type" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="game_config_product">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kind_id" Type="Int32" />
+    <Property Name="product_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="product_price" Type="Int32" />
+    <Property Name="bind_buy_send" Type="Int32" />
+    <Property Name="product_num" Type="Int32" />
+    <Property Name="describe" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="key_word" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="product_id" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="game_config_robot_info">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="kind" Type="Int32" />
+    <Property Name="server_id" Type="Int32" />
+    <Property Name="server_time" Type="Int32" />
+    <Property Name="min_play_draw" Type="Int32" />
+    <Property Name="max_play_draw" Type="Int32" />
+    <Property Name="min_repose_time" Type="Int32" />
+    <Property Name="max_repose_time" Type="Int32" />
+    <Property Name="server_gender" Type="Int32" />
+    <Property Name="min_score" Type="Int32" />
+    <Property Name="max_score" Type="Int32" />
+  </EntityType>
+  <EntityType Name="game_config_room">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="gameid" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="roomid" Type="Int32" />
+    <Property Name="tablecount" Type="Int32" />
+    <Property Name="chaircount" Type="Int32" />
+    <Property Name="roomname" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="roomtype" Type="Int32" />
+    <Property Name="roommode" Type="Int32" />
+    <Property Name="address" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="port" Type="Int32" />
+    <Property Name="modulename" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="ruleenter" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="rulegame" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="rulecustom" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Int32" />
+  </EntityType>
+  <EntityType Name="game_config_route">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="game_address" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="game_port" Type="Int32" />
+    <Property Name="kind_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="game_config_test_game">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="count" Type="Int32" Nullable="false" />
+    <Property Name="min_niu" Type="Int32" Nullable="false" />
+    <Property Name="max_niu" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="game_game_friend">
+    <Key>
+      <PropertyRef Name="room_code" />
+    </Key>
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="gameid" Type="Int32" />
+    <Property Name="room_code" Type="Int32" Nullable="false" />
+    <Property Name="create_time" Type="DateTime" />
+    <Property Name="propcount" Type="Int32" />
+    <Property Name="totalcount" Type="Int32" />
+    <Property Name="nickname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="end_time" Type="Int32" />
+    <Property Name="game_address" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="game_port" Type="Int32" />
+    <Property Name="game_create_detail" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
+    <Property Name="create_type" Type="Int32" />
+  </EntityType>
+  <EntityType Name="game_game_score_change">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="WinCount" Type="Int32" />
+    <Property Name="LostCount" Type="Int32" />
+    <Property Name="DrawCount" Type="Int32" />
+    <Property Name="FleeCount" Type="Int32" />
+    <Property Name="UserRight" Type="Int32" />
+    <Property Name="MasterRight" Type="Int32" />
+    <Property Name="PlayTimeCount" Type="Int32" />
+    <Property Name="AllLogonTimes" Type="Int32" />
+    <Property Name="RegisterDate" Type="DateTime" />
+    <Property Name="LastLogonDate" Type="DateTime" />
+    <Property Name="LogonGold" Type="Int32" />
+    <Property Name="ChangeGold" Type="Int32" />
+    <Property Name="LastPlayTimeCount" Type="Int32" />
+    <Property Name="LastWinCount" Type="Int32" />
+    <Property Name="LastLostCount" Type="Int32" />
+    <Property Name="LastDrawCount" Type="Int32" />
+    <Property Name="LastScore" Type="Int32" />
+  </EntityType>
+  <EntityType Name="game_user_account">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="Accounts" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="LogonPass" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="InsurePass" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="nick_name" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="Gender" Type="Int32" />
+    <Property Name="RegisterDate" Type="DateTime" />
+    <Property Name="RegisterMachine" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="WechatUid" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="Gold" Type="Int64" />
+    <Property Name="Ingot" Type="Int64" />
+    <Property Name="clienttype" Type="Int32" />
+    <Property Name="client_area" Type="Int32" />
+    <Property Name="client_channel" Type="Int32" />
+    <Property Name="client_app" Type="Int32" />
+    <Property Name="client_version" Type="Int32" />
+    <Property Name="client_pkg" Type="Int32" />
+    <Property Name="keyword" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="head_url" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="wechat_unionid" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="bind_number" Type="Int32" />
+  </EntityType>
+  <EntityType Name="game_user_address">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="longitude" Type="Double" Nullable="false" />
+    <Property Name="latitude" Type="Double" Nullable="false" />
+    <Property Name="address" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="address_ip" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="logtime" Type="DateTime" Nullable="false" />
+    <Property Name="mac" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="session" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="login_count" Type="Int32" />
+    <Property Name="promoter_id" Type="Int32" Nullable="false" />
+    <Property Name="phone" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="game_user_player">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="code" Type="Int32" Nullable="false" />
+    <Property Name="game_address" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="game_port" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="game_version_config">
+    <Key>
+      <PropertyRef Name="game_id" />
+    </Key>
+    <Property Name="game_id" Type="Int32" Nullable="false" />
+    <Property Name="min_ver" Type="Int32" />
+    <Property Name="cur_ver" Type="Int32" />
+    <Property Name="max_ver" Type="Int32" />
+    <Property Name="int_mask1" Type="Int32" />
+    <Property Name="int_mask2" Type="Int32" />
+    <Property Name="int_mask3" Type="Int32" />
+    <Property Name="wechat_app_id" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="wechat_app_secert" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="login_mask1" Type="Int32" />
+    <Property Name="login_mask2" Type="Int32" />
+    <Property Name="login_mask3" Type="Int32" />
+  </EntityType>
+  <EntityType Name="log_create_table">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="gameid" Type="Int32" />
+    <Property Name="propcount" Type="Int32" />
+    <Property Name="logtime" Type="DateTime" />
+    <Property Name="code" Type="Int32" />
+    <Property Name="game_create_detail" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="log_friend_game_every_score">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="code" Type="Int32" />
+    <Property Name="detail" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="logtime" Type="DateTime" />
+    <Property Name="landlord" Type="Int32" />
+    <Property Name="int_play_count" Type="Int32" />
+    <Property Name="kind_id" Type="Int32" />
+    <Property Name="room_type" Type="Int32" />
+    <Property Name="create_type" Type="Int32" />
+  </EntityType>
+  <EntityType Name="log_friend_game_over">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="code" Type="Int32" />
+    <Property Name="play_detail" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="logtime" Type="DateTime" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="landlord" Type="Int32" />
+    <Property Name="kind_id" Type="Int32" />
+    <Property Name="room_type" Type="Int32" />
+    <Property Name="create_type" Type="Int32" />
+  </EntityType>
+  <EntityType Name="log_friend_game_score">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="result" Type="Int32" />
+    <Property Name="code" Type="Int32" />
+    <Property Name="logtime" Type="DateTime" />
+    <Property Name="kindid" Type="Int32" />
+    <Property Name="serverid" Type="Int32" />
+    <Property Name="score" Type="Int32" />
+    <Property Name="all_count" Type="Int32" />
+    <Property Name="win_count" Type="Int32" />
+    <Property Name="playtime" Type="Int32" />
+  </EntityType>
+  <EntityType Name="log_game_order">
+    <Key>
+      <PropertyRef Name="order_id" />
+    </Key>
+    <Property Name="order_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="order_status" Type="Int32" />
+    <Property Name="order_money" Type="Decimal" />
+    <Property Name="kind_id" Type="Int32" />
+    <Property Name="pay_type" Type="Int32" />
+    <Property Name="user_id" Type="Int32" />
+    <Property Name="channel" Type="Int32" />
+    <Property Name="product_id" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="out_orderno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="pay_time" Type="DateTime" />
+    <Property Name="pay_money" Type="Decimal" />
+    <Property Name="real_money" Type="Decimal" />
+    <Property Name="create_time" Type="DateTime" />
+    <Property Name="ingot_num" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="log_game_play_over">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="play_count" Type="Int32" Nullable="false" />
+    <Property Name="log_time" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="log_game_server_uid">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="server_id" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="server_port" Type="Int32" />
+  </EntityType>
+  <EntityType Name="log_game_share_friend">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="log_time" Type="DateTime" Nullable="false" />
+    <Property Name="share_status" Type="Int32" />
+  </EntityType>
+  <EntityType Name="log_gamelogin">
+    <Key>
+      <PropertyRef Name="logid" />
+    </Key>
+    <Property Name="logid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="logtime" Type="DateTime" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="kindid" Type="Int32" />
+    <Property Name="serverid" Type="Int32" />
+    <Property Name="clientip" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="gold" Type="Int64" />
+    <Property Name="code" Type="Int32" />
+    <Property Name="ingot" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="log_gamelogout">
+    <Key>
+      <PropertyRef Name="logid" />
+    </Key>
+    <Property Name="logid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="logtime" Type="DateTime" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="kindid" Type="Int32" />
+    <Property Name="serverid" Type="Int32" />
+    <Property Name="gold" Type="Int64" />
+    <Property Name="bank" Type="Int64" />
+    <Property Name="clientip" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="code" Type="Int32" />
+  </EntityType>
+  <EntityType Name="log_ingot_detail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="order_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ingot_num" Type="Int32" />
+    <Property Name="kind_id" Type="Int32" />
+    <Property Name="reason" Type="Int32" />
+    <Property Name="user_id" Type="Int32" />
+    <Property Name="channel" Type="Int32" />
+    <Property Name="create_time" Type="DateTime" />
+    <Property Name="source_id" Type="Int32" />
+    <Property Name="after_ingot" Type="Int64" />
+    <Property Name="before_ingot" Type="Int64" />
+    <Property Name="remark" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="bozhong_dbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="bz_game_game_friend" EntityType="Self.bz_game_game_friend" />
+    <EntitySet Name="game_config_award" EntityType="Self.game_config_award" />
+    <EntitySet Name="game_config_change_gold" EntityType="Self.game_config_change_gold" />
+    <EntitySet Name="game_config_email" EntityType="Self.game_config_email" />
+    <EntitySet Name="game_config_product" EntityType="Self.game_config_product" />
+    <EntitySet Name="game_config_robot_info" EntityType="Self.game_config_robot_info" />
+    <EntitySet Name="game_config_room" EntityType="Self.game_config_room" />
+    <EntitySet Name="game_config_route" EntityType="Self.game_config_route" />
+    <EntitySet Name="game_config_test_game" EntityType="Self.game_config_test_game" />
+    <EntitySet Name="game_game_friend" EntityType="Self.game_game_friend" />
+    <EntitySet Name="game_game_score_change" EntityType="Self.game_game_score_change" />
+    <EntitySet Name="game_user_account" EntityType="Self.game_user_account" />
+    <EntitySet Name="game_user_address" EntityType="Self.game_user_address" />
+    <EntitySet Name="game_user_player" EntityType="Self.game_user_player" />
+    <EntitySet Name="game_version_config" EntityType="Self.game_version_config" />
+    <EntitySet Name="log_create_table" EntityType="Self.log_create_table" />
+    <EntitySet Name="log_friend_game_every_score" EntityType="Self.log_friend_game_every_score" />
+    <EntitySet Name="log_friend_game_over" EntityType="Self.log_friend_game_over" />
+    <EntitySet Name="log_friend_game_score" EntityType="Self.log_friend_game_score" />
+    <EntitySet Name="log_game_order" EntityType="Self.log_game_order" />
+    <EntitySet Name="log_game_play_over" EntityType="Self.log_game_play_over" />
+    <EntitySet Name="log_game_server_uid" EntityType="Self.log_game_server_uid" />
+    <EntitySet Name="log_game_share_friend" EntityType="Self.log_game_share_friend" />
+    <EntitySet Name="log_gamelogin" EntityType="Self.log_gamelogin" />
+    <EntitySet Name="log_gamelogout" EntityType="Self.log_gamelogout" />
+    <EntitySet Name="log_ingot_detail" EntityType="Self.log_ingot_detail" />
+  </EntityContainer>
+</Schema>

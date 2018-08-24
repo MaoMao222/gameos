@@ -1,0 +1,57 @@
+﻿@model testlogin.EFModels.game_config_product
+@{
+    ViewBag.Title = "PCreate";
+    Layout = "~/Views/SuperAdmin/_LayoutHTML5Page.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">添加产品</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    @Html.ValidationSummary(true)
+
+    <div>
+        <label>产品名称</label>
+        @Html.EditorFor(model => model.product_name)
+        @Html.ValidationMessageFor(model => model.product_name)
+    </div>
+    <div>
+        <label>价格</label>
+        @Html.EditorFor(model => model.product_price)
+        @Html.ValidationMessageFor(model => model.product_price)
+    </div>
+    <div>
+        <label>bind_buy_send</label>
+        @Html.EditorFor(model => model.bind_buy_send)
+        @Html.ValidationMessageFor(model => model.bind_buy_send)
+    </div>
+    <div>
+        <label>数量</label>
+        @Html.EditorFor(model => model.product_num)
+        @Html.ValidationMessageFor(model => model.product_num)
+    </div>
+    <div>
+        <label>描述</label>
+        @Html.EditorFor(model => model.describe)
+        @Html.ValidationMessageFor(model => model.describe)
+    </div>
+
+    <div>
+        <label>product_id</label>
+        @Html.EditorFor(model => model.product_id)
+        @Html.ValidationMessageFor(model => model.product_id)
+    </div>
+
+        <div><input type="submit" value="保存" /></div>
+
+}
+<div>
+    @Html.ActionLink("返回", "Product")
+
+</div>

@@ -1,0 +1,47 @@
+﻿@model testlogin.EFModels.game_config_test_game
+@{
+    ViewBag.Title = "TestGameEdit";
+    Layout = "~/Views/SuperAdmin/_LayoutHTML5Page.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">游戏测试修改</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.user_id)
+    <div>
+        
+        @Html.LabelFor(model => model.user_id)
+        @Html.DisplayFor(model => model.user_id)
+        @Html.ValidationMessageFor(model => model.user_id)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.count)
+        @Html.EditorFor(model => model.count)
+        @Html.ValidationMessageFor(model => model.count)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.min_niu)
+        @Html.EditorFor(model => model.min_niu)
+        @Html.ValidationMessageFor(model => model.min_niu)
+    </div>
+        <div>
+            @Html.LabelFor(model => model.max_niu)
+            @Html.EditorFor(model => model.max_niu)
+            @Html.ValidationMessageFor(model => model.max_niu)
+        </div>
+        <div><input type="submit" value="修改" /></div>
+
+}
+<div>
+    @Html.ActionLink("返回", "TestGame")
+
+</div>
